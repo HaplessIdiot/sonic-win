@@ -133,12 +133,7 @@ BuildSystem: cmake
 BuildOption: -DBUILD_QCH:BOOL=ON
 BuildOption: -DBUILD_WITH_QT6:BOOL=ON
 BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
-# Renamed 2025-05-01 after 6.0
-# %rename plasma6-kwin
-# %rename plasma6-kwin-x11
-Provides: kwin-x11 = %{version}-%{release}
 Conflicts: kwin-x11
-Obsoletes: kwin-x11 < %{version}-%{release}
 
 %description
 sonic-win is an X11 window manager and a compositing manager. 
@@ -152,13 +147,12 @@ user group, but follows the targeted user group of the Desktop Shell
 using sonic-win as it's window manager.
 
 %package devel
-Summary: Development files for the KDE Frameworks Win library
+Summary: Development files for the Sonic window manager
 Group: Development/KDE and Qt
-# Renamed 2025-05-01 after 6.0
-# %rename plasma6-kwin-devel
+Requires: %{name} = %{EVRD}
 
 %description devel
-Development files for the KDE Frameworks Win library.
+Development files for the Sonic window manager
 
 %files -f %{name}.lang
 %{_bindir}/kwin_x11
