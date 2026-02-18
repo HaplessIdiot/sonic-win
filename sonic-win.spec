@@ -1,7 +1,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 %define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 80 -o "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 #define git 20240222
-%define gitbranch Plasma/6.5
+%define gitbranch Plasma/6.6
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 # (tpg) optimize it a bit
@@ -9,7 +9,7 @@
 
 Summary: An X11-only, lighter-weight fork of KWin
 Name: sonic-win
-Version: 6.5.5
+Version: 6.6
 Release: %{?git:0.%{git}.}1
 URL: https://github.com/Sonic-DE/sonic-win
 License: GPL
